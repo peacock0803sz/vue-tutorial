@@ -4,5 +4,7 @@
 			"path": "/home/peacock/.ghq/github.com/peacock0803sz/vue-tutorial"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"editor.detectIndentation": false
+	}
 }
