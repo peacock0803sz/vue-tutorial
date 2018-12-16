@@ -16,7 +16,12 @@ const todoStorage = {
 const app = new Vue({
   el: '#app',
   data: {
-    todos: []
+    todos: [],
+    options: [
+      { value:-1, label: 'All' },
+      { value:0, label: 'In progress' },
+      { value:1, label: 'Done' }
+    ]
   },
   methods: {
     // todo追加の処理
