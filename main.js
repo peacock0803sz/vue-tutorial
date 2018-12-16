@@ -1,17 +1,15 @@
 // https://jp.vuejs.org/v2/examples/todomvc.html
 const STORAGE_KEY = 'todos-vuejs-demo'
 const todoStorage = {
-  fetch: ()=>{
+  fetch: () => {
     const todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
-    todos.forEach((todo, index)=>{
+    todos.forEach((todo, index) => {
       todo.id = index
     })
     todoStorage.uid = todos.length
     return todos
   },
-  save: (todos)=>{
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(todos))
-  }
+  save: todos => localStorage.setItem(STORAGE_KEY, JSON.stringify(todos))
 }
 
 
@@ -27,7 +25,7 @@ const app = new Vue({
       const comment = this.$refs.comment
       if (!comment.value.length) {
         return
-      }
+      },
       // { new ID, comments, states(dafaut=0) }
       this.todos.push({
         id: todoStorage.uid++,
@@ -37,5 +35,11 @@ const app = new Vue({
       // init form
       comment.value = ''
     }
+  },
+  watch: {
+    todos: {
+      handler: todos => todoStorage.sava(todos)
+    },
+    deep: true
   }
 })
