@@ -24,13 +24,15 @@
       </thead>
       <tbody>
         <!-- Todoの要素を表示する。(v-):key="" -->
-        <tr v-for="item in todos" :key="item.id">
+        <tr v-for="item in todos" :key="item.id" :class="{done:item.state}">
           <th>{{ item.id }}</th>
           <td>{{ item.comment }}</td>
           <td class="state">
             <button @click="doChangeState(item)">{{ labels[item.state] }}</button>
           </td>
-          <button @click.ctrl="doRemove(item)">削除</button>
+          <td class="button">
+            <button @click.ctrl="doRemove(item)">削除</button>
+          </td>
         </tr>
       </tbody>
     </table>

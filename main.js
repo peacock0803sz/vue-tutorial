@@ -23,6 +23,19 @@ const app = new Vue({
       { value:1, label: 'Done' }
     ]
   },
+
+  watch: {
+    todos: {
+      handler: todos => todoStorage.sava(todos) ,
+      deep: true
+    }
+  },
+
+  created() {
+    // auto fetch
+    this.todos = todoStorage.fetch()
+  },
+
   methods: {
     // todo追加の処理
     doAdd: function(event, value) {
@@ -30,7 +43,7 @@ const app = new Vue({
       const comment = this.$refs.comment
       if (!comment.value.length) {
         return
-      },
+      }
       // { new ID, comments, states(dafaut=0) }
       this.todos.push({
         id: todoStorage.uid++,
@@ -39,21 +52,14 @@ const app = new Vue({
       })
       // init form
       comment.value = ''
-    }
-  },
-  watch: {
-    todos: {
-      handler: todos => todoStorage.sava(todos)
     },
-    deep: true
-  },
-  created() {
-    // auto fetch
-    this.todos = todoStorage.fetch()
-  },
+
   doChangeState: itme => itme.state = itme.state ? 0 : 1 ,
+
   doRemove: function (itme) {
     const index = this.todos.indexOf(itme)
     this.todos.splice(index, 1)
+    }
+
   }
 })
