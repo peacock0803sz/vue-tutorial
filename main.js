@@ -1,8 +1,8 @@
 // https://jp.vuejs.org/v2/examples/todomvc.html
-var STORAGE_KEY = 'todos-vuejs-demo'
-var todoStorage = {
+const STORAGE_KEY = 'todos-vuejs-demo'
+const todoStorage = {
   fetch: ()=>{
-    var todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
+    const todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
     todos.forEach((todo, index)=>{
       todo.id = index
     })
@@ -24,7 +24,7 @@ const app = new Vue({
     // todo追加の処理
     doAdd: function(event, value) {
       // refで名前をつけておいた要素を参照する
-      var comment = this.$refs.comment
+      const comment = this.$refs.comment
       if (!comment.value.length) {
         return
       }
