@@ -19,7 +19,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Todoの要素を表示する -->
+                    <!-- Todoの要素を表示する。(v-):key="" -->
+                    <tr v-for="item in todos" :key="item.id">
+                        <th>{{ item.id }}</th>
+                        <td>{{ item.comment }}</td>
+                        <td class="state">
+                            <!-- 状態変更ボタンのモック -->
+                            <button>削除</button>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <!-- 新規登録フォーム -->
