@@ -46,4 +46,9 @@ const app = new Vue({
     // auto fetch
     this.todos = todoStorage.fetch()
   },
+  doChangeState: itme => itme.state = itme.state ? 0 : 1 ,
+  doRemove: function (itme) {
+    const index = this.todos.indexOf(itme)
+    this.todos.splice(index, 1)
+  }
 })
