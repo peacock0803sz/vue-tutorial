@@ -41,5 +41,9 @@ const app = new Vue({
       handler: todos => todoStorage.sava(todos)
     },
     deep: true
-  }
+  },
+  created() {
+    // auto fetch
+    this.todos = todoStorage.fetch()
+  },
 })
