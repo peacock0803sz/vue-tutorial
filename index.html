@@ -24,9 +24,9 @@
           <th>{{ item.id }}</th>
           <td>{{ item.comment }}</td>
           <td class="state">
-            <!-- 状態変更ボタンのモック -->
-            <button>削除</button>
+            <button @click="doChangeState(item)">{{ labels[item.state] }}</button>
           </td>
+          <button @click.ctrl="doRemove(item)">削除</button>
         </tr>
       </tbody>
     </table>
