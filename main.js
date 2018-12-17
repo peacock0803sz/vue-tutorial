@@ -17,6 +17,7 @@ const app = new Vue({
   el: '#app',
   data: {
     todos: [],
+    current: -1,
     options: [
       { value:-1, label: 'All' },
       { value:0, label: 'In progress' },
