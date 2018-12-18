@@ -26,7 +26,7 @@
       </thead>
       <tbody>
         <!-- Todoの要素を表示する。v-bind=>: v-on=>@ -->
-        <tr v-for="item in todos" :key="item.id" :class="{done:item.state}">
+        <tr v-for="item in computedTodos" :key="item.id" :class="{done:item.state}">
           <th>{{ item.id }}</th>
           <td>{{ item.comment }}</td>
           <td class="state">

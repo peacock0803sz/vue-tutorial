@@ -25,6 +25,14 @@ const app = new Vue({
     ]
   },
 
+  computedTodos: function () {
+    return this.todos.filter(function (el) {
+      // this.currentが負ならtrueを返す...?
+      // return this.current < 0 ? true : this.current === el.state
+      return this.current < 0 || this.current === el.state
+    }, this)
+  },
+
   watch: {
     todos: {
       handler: todos => todoStorage.save(todos) ,
