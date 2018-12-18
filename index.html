@@ -15,7 +15,7 @@
       <input type="radio" v-model="current" :value="label.value">{{ label.label }}
     </label>
 
-    {{ computedTodos.length }}
+    <p>全{{ computedTodos.length }}件を表示</p>
 
     <table>
       <thead>
@@ -40,6 +40,7 @@
         </tr>
       </tbody>
     </table>
+    <p>削除はCtrl+Click</p>
     
     <h2>新しい作業の追加</h2>
   <form class="add-form" @submit.prevent="doAdd">
