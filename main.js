@@ -32,8 +32,7 @@ const app = new Vue({
         // return this.current < 0 ? true : this.current === el.state
         return this.current < 0 || this.current === el.state
       }, this)
-    }
-  },
+    },
 
   watch: {
     todos: {
