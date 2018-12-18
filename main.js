@@ -34,6 +34,13 @@ const app = new Vue({
       }, this)
     },
 
+    showLabels() {
+      return this.options.reduce((a, b)=>{
+        return Object.assign(a, { [b.value]: b.label })
+      })
+    }
+  },
+
   watch: {
     todos: {
       handler: todos => todoStorage.save(todos) ,
