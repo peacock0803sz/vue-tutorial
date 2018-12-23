@@ -8,13 +8,14 @@
 <body>
   <div id="app">
     <!-- 絞り込みボタン -->
-    <tr v-for="item in todos" :key="item.id">
+    <tr>
       <th class="id">ID</th>
       <th class="comment">Comment</th>
       <th class="state">State</th>
       <th class="buttun"> - </th>
     </tr>
     <!-- Todoテーブル -->
+    <tr v-for="item in todos" :key="item.id"></tr>
     <!-- 新規登録フォーム -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   <script src="./main.js"></script>
