@@ -15,11 +15,22 @@
           <th class="id">ID</th>
           <th class="comment">Comment</th>
           <th class="state">State</th>
-          <th class="buttun"> - </th>
+          <th class="button"> - </th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in todos" :key="item.id"></tr>
+        <tr v-for="item in todos" :key="item.id">
+          <th>{{ item.id }}</th>
+          <td>{{ item.comment }}</td>
+          <td class="state">
+            <!-- 状態変更ボタン -->
+            <button>{{ item.state }}</button>
+          </td>
+          <td class="button">
+            <!-- 削除ボタン -->
+            <button>削除</button>
+          </td>
+        </tr>
       </tbody>
     </table>
     <!-- 新規登録フォーム -->
