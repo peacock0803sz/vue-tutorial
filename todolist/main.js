@@ -17,5 +17,18 @@ const app = new Vue({
     data: {
       todos: []
     },
-    methods: {}
+    methods: {
+      doAdd: function(event, value) {
+        const comment = this.$refs.comment
+        if (!comment.value.length) {return}
+      // {{ new ID, Comment, State }}
+      this.todos.push({
+        id: todoStorage.uid++,
+        comment: comment.value,
+        state: 0
+      })
+      //init
+      comment.value = ''
+    }
+  }
 })
