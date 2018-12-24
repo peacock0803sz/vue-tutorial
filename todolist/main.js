@@ -17,6 +17,14 @@ const app = new Vue({
     data: {
       todos: []
     },
+
+    watch: {
+      todos: {
+        handler: todos => todoStorage.save(todos),
+        deep: true
+      }
+    },
+
     methods: {
       doAdd: function(event, value) {
         const comment = this.$refs.comment
