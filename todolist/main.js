@@ -44,9 +44,9 @@ const app = new Vue({
     },
 
     doChangeState: item => item.state = item.state ? 0 : 1,
-    
+
     doRemove: function (item) {
-      const index = this.todo.indexOf(item)
+      const index = this.todos.indexOf(item)
       this.todos.splice(index, 1)
     }
   }
