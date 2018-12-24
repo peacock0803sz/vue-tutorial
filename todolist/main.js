@@ -41,6 +41,13 @@ const app = new Vue({
       })
       //init
       comment.value = ''
+    },
+
+    doChangeState: item => item.state = item.state ? 0 : 1,
+    
+    doRemove: function (item) {
+      const index = this.todo.indexOf(item)
+      this.todos.splice(index, 1)
     }
   }
 })

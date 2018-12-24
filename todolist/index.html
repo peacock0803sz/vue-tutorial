@@ -22,13 +22,13 @@
         <tr v-for="item in todos" :key="item.id">
           <th>{{ item.id }}</th>
           <td>{{ item.comment }}</td>
-          <td class="state">
+          <td class="state" @click="doChangeState(item)">
             <!-- 状態変更ボタン -->
             <button>{{ item.state }}</button>
           </td>
-          <td class="button">
+          <td class="button" @clicl.ctrl="doRemove(item)">
             <!-- 削除ボタン -->
-            <button>Remeve</button>
+            <button>Remove</button>
           </td>
         </tr>
       </tbody>
