@@ -22,7 +22,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in todos" :key="item.id">
+        <tr v-for="item in computedTodos" :key="item.id">
           <th>{{ item.id }}</th>
           <td>{{ item.comment }}</td>
           <td class="state" @click="doChangeState(item)">
