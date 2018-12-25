@@ -8,6 +8,9 @@
 <body>
   <div id="app">
     <!-- 絞り込みボタン -->
+    <label v-for="label in options">
+      <input type="radio" v-model="current" :value="label.value">{{ label.label }}
+    </label>
     <!-- Todoテーブル -->
     <table>
       <thead>

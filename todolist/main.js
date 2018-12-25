@@ -15,7 +15,13 @@ const app = new Vue({
     el:'#app',
     
     data: {
-      todos: []
+      todos: [],
+      options: [
+        {value: -1, label:'All'},
+        {value: 0, label:'WIP'},
+        {value: 1, label:'Done'}
+      ],
+      current: -1
     },
 
     watch: {
