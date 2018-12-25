@@ -43,6 +43,7 @@ const app = new Vue({
     created() {
       this.todos = todoStorage.fetch()
     },
+  },
 
     methods: {
       doAdd: function(event, value) {
